@@ -64,7 +64,17 @@ It links **hamlib** for CAT and drives the rig's serial control lines for keying
 
 ## Install
 
-Build from source (Debian/Ubuntu):
+**Ubuntu (PPA) — no compiling:**
+
+```sh
+sudo add-apt-repository ppa:benishor/hamtools
+sudo apt update
+sudo apt install cwsd
+```
+
+Other distros / Raspberry Pi OS: grab a self-contained static binary from the
+[releases](https://github.com/yo6ssw/cwsd/releases) (`x86_64`/`arm64`), or build
+from source:
 
 ```sh
 sudo apt install libhamlib-dev libasound2-dev libopus-dev cmake build-essential
@@ -72,7 +82,7 @@ git clone https://github.com/yo6ssw/cwsd.git
 cd cwsd
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
-sudo cmake --install build          # installs to /usr/local/bin
+sudo cmake --install build
 ```
 
 Requires CMake ≥ 3.25 and a C++20 compiler.
